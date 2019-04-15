@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using euler;
-using p01;
+using P01;
+using EulerLib;
 
 namespace eulertest
 {
@@ -14,13 +15,10 @@ namespace eulertest
         [TestMethod]
         public void Testp01()
         {
-            NaturalNumbersList list1 = new NaturalNumbersList(9, 3, 5);
+    
+            Assert.AreEqual(23, EMath.SumOfMultiples(9, 3, 5));
 
-            Assert.AreEqual(23, list1.SumOfMultiples);
-
-            NaturalNumbersList list2 = new NaturalNumbersList(999, 3, 5);
-
-            Assert.AreEqual(233168, list2.SumOfMultiples);
+            Assert.AreEqual(233168, EMath.SumOfMultiples(999, 3, 5));
         }
 
         /// <summary>
@@ -30,7 +28,7 @@ namespace eulertest
         [ExpectedException(typeof(ArgumentException))]
         public void TestNull()
         {
-            NaturalNumbersList list1 = new NaturalNumbersList(999, null);
+            EMath.SumOfMultiples(999, null);
         }
 
         /// <summary>
@@ -40,7 +38,8 @@ namespace eulertest
         [ExpectedException(typeof(ArgumentException))]
         public void TestMissingMultiples()
         {
-            NaturalNumbersList list1 = new NaturalNumbersList(999);
+            EMath.SumOfMultiples(999, null);
+
         }
 
         /// <summary>
@@ -50,7 +49,8 @@ namespace eulertest
         [ExpectedException(typeof(ArgumentException))]
         public void TestMaxOutOfRange()
         {
-            NaturalNumbersList list1 = new NaturalNumbersList(50, 100);
+            EMath.SumOfMultiples(50, 100);
+            
         }
     }
 }
