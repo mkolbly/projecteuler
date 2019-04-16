@@ -10,38 +10,6 @@ namespace euler
     public static class Mathz
     {
 
-        /// <summary>
-        /// Get the greatest product of the adjacent digits of num
-        /// </summary>
-        /// <param name="num">Number in question</param>
-        /// <param name="numAdjacentDigits">How many adjacent digits to multiply</param>
-        public static long GreatestProduct(string num, int numAdjacentDigits)
-        {
-            if (String.IsNullOrWhiteSpace(num))
-                return 0;
-
-            if (numAdjacentDigits > num.Length)
-                return 0;
-
-            long greatest = 0;
-
-            for (int i = 0; i <= num.Length - numAdjacentDigits; i++)
-            {
-                long product = 1;
-
-                for (int j = i; j < i + numAdjacentDigits; j++)
-                {
-                    product *= int.Parse(num[j].ToString());
-                }
-
-                if (product > greatest)
-                    greatest = product;
-            }
-
-            return greatest;
-        }
-
-
 
 
 
