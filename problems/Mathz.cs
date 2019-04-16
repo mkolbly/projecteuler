@@ -173,25 +173,6 @@ namespace euler
         }
 
 
-        /// <summary>
-        /// Is the given number a palindrome
-        /// </summary>
-        /// <param name="num">number to test</param>
-        /// <returns>true if it is a palindrome, else false</returns>
-        public static bool IsNumericPalindrome(int num)
-        {
-            if (num < 0)
-                return false;
-
-            string stNum = num.ToString();
-
-            for (int i = 0, j = stNum.Length - 1; i < j; i++, j--)
-            {
-                if (stNum[i] != stNum[j])
-                    return false;
-            }
-
-            return true;
-        }
+       
     }
 }

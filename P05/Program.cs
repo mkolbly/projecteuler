@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace euler
+namespace P05
 {
-    public static class XConvert
+    class Program
     {
-
-      
+        static void Main(string[] args)
+        {
+        }
     }
-
 }
-

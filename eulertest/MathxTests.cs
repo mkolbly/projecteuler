@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace eulertest
 {
     [TestClass]
-    public class MathxTest
+    public class MathxTests
     {
         
 
@@ -32,24 +32,27 @@ namespace eulertest
         }
 
 
+        /// <summary>
+        /// Tests for if numbers are a palindome
+        /// </summary>
         [TestMethod]
         public void TestPalindrome()
         {
-            Assert.IsTrue(Mathz.IsNumericPalindrome(0));
+            Assert.IsTrue(Mathx.IsNumericPalindrome(0));
 
-            Assert.IsTrue(Mathz.IsNumericPalindrome(11));
+            Assert.IsTrue(Mathx.IsNumericPalindrome(11));
 
-            Assert.IsTrue(Mathz.IsNumericPalindrome(222));
+            Assert.IsTrue(Mathx.IsNumericPalindrome(222));
 
-            Assert.IsTrue(Mathz.IsNumericPalindrome(3333));
+            Assert.IsTrue(Mathx.IsNumericPalindrome(3333));
 
-            Assert.IsTrue(Mathz.IsNumericPalindrome(9009));
+            Assert.IsTrue(Mathx.IsNumericPalindrome(9009));
 
-            Assert.IsTrue(Mathz.IsNumericPalindrome(909));
+            Assert.IsTrue(Mathx.IsNumericPalindrome(909));
 
-            Assert.IsFalse(Mathz.IsNumericPalindrome(12));
+            Assert.IsFalse(Mathx.IsNumericPalindrome(12));
 
-            Assert.IsFalse(Mathz.IsNumericPalindrome(122));
+            Assert.IsFalse(Mathx.IsNumericPalindrome(122));
         }
 
         /// <summary>

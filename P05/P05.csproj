@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C67F368-2AB2-48DD-A618-5255C9A40736}</ProjectGuid>
+    <ProjectGuid>{062E5384-1595-4915-9917-B147F1B7612A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>euler</RootNamespace>
-    <AssemblyName>euler</AssemblyName>
+    <RootNamespace>P05</RootNamespace>
+    <AssemblyName>P05</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGrid.cs" />
-    <Compile Include="MainProgram.cs" />
-    <Compile Include="Mathz.cs" />
-    <Compile Include="p11.cs" />
-    <Compile Include="p4.cs" />
-    <Compile Include="p5.cs" />
-    <Compile Include="p6.cs" />
-    <Compile Include="p7.cs" />
-    <Compile Include="p8.cs" />
-    <Compile Include="p9.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
