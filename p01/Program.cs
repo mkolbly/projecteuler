@@ -20,7 +20,7 @@ namespace P01
         static void Main(string[] args)
         {
 
-            long sum = EMath.SumOfMultiples(999, 3, 5);    // 233168
+            long sum = Mathx.SumOfMultiples(999, 3, 5);    // 233168
 
             Console.WriteLine("Sum of all multiples of 3 or 5 below 1000 is {0}", sum);
         }

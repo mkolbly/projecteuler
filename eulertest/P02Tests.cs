@@ -17,26 +17,26 @@ namespace eulertest
         [TestMethod]
         public void TestSummation()
         {
-            BigInteger sum = EMath.SumOfEvenFibonacci(4000000 - 1);
+            BigInteger sum = Mathx.SumOfEvenFibonacci(4000000 - 1);
 
             Assert.AreEqual(4613732, sum);
 
-            Assert.AreEqual(10, EMath.SumOfEvenFibonacci(10));
+            Assert.AreEqual(10, Mathx.SumOfEvenFibonacci(10));
 
-            Assert.AreEqual(44, EMath.SumOfEvenFibonacci(100));
+            Assert.AreEqual(44, Mathx.SumOfEvenFibonacci(100));
 
-            Assert.AreEqual(2, EMath.SumOfEvenFibonacci(2));
+            Assert.AreEqual(2, Mathx.SumOfEvenFibonacci(2));
 
-            Assert.AreEqual(0, EMath.SumOfEvenFibonacci(1));
+            Assert.AreEqual(0, Mathx.SumOfEvenFibonacci(1));
 
-            Assert.AreEqual(0, EMath.SumOfEvenFibonacci(0));
+            Assert.AreEqual(0, Mathx.SumOfEvenFibonacci(0));
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestInvalidArg()
         {
-            EMath.SumOfEvenFibonacci(-1);
+            Mathx.SumOfEvenFibonacci(-1);
         }
     }
 }

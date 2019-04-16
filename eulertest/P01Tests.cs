@@ -16,9 +16,9 @@ namespace eulertest
         public void Testp01()
         {
     
-            Assert.AreEqual(23, EMath.SumOfMultiples(9, 3, 5));
+            Assert.AreEqual(23, Mathx.SumOfMultiples(9, 3, 5));
 
-            Assert.AreEqual(233168, EMath.SumOfMultiples(999, 3, 5));
+            Assert.AreEqual(233168, Mathx.SumOfMultiples(999, 3, 5));
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace eulertest
         [ExpectedException(typeof(ArgumentException))]
         public void TestNull()
         {
-            EMath.SumOfMultiples(999, null);
+            Mathx.SumOfMultiples(999, null);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace eulertest
         [ExpectedException(typeof(ArgumentException))]
         public void TestMissingMultiples()
         {
-            EMath.SumOfMultiples(999, null);
+            Mathx.SumOfMultiples(999, null);
 
         }
 
@@ -49,7 +49,7 @@ namespace eulertest
         [ExpectedException(typeof(ArgumentException))]
         public void TestMaxOutOfRange()
         {
-            EMath.SumOfMultiples(50, 100);
+            Mathx.SumOfMultiples(50, 100);
             
         }
     }

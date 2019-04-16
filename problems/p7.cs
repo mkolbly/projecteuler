@@ -20,7 +20,7 @@ namespace euler
         public static void GetAnswer()
         {
 
-            long answer = Mathx.NthPrime(10001);
+            long answer = Mathz.NthPrime(10001);
 
         }
 

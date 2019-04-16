@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace euler
 {
-    public static class Mathx
+    public static class Mathz
     {
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace euler
 
             while (numPrimes < n)
             {
-                if (Mathx.IsPrime(num))
+                if (Mathz.IsPrime(num))
                     numPrimes++;
 
                 if (numPrimes == n)
@@ -127,7 +127,7 @@ namespace euler
 
             for (long i = 3; i < sqrtNum; i += 2)
             {
-                if ((testNum % i == 0) && Mathx.IsPrime(i))
+                if ((testNum % i == 0) && Mathz.IsPrime(i))
                     largest = i;
             }
 
@@ -157,7 +157,7 @@ namespace euler
             }
             else
             {
-                if (Mathx.LongPrimes.Contains(num))
+                if (Mathz.LongPrimes.Contains(num))
                     return true;
 
                 long numSqrt = (int)Math.Floor(Math.Sqrt(num));
@@ -167,7 +167,7 @@ namespace euler
                         return false;
             }
 
-            Mathx.LongPrimes.Add(num);
+            Mathz.LongPrimes.Add(num);
 
             return true;
         }

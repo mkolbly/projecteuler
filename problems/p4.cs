@@ -26,7 +26,7 @@ namespace euler
                 {
                     int product = i * j;
 
-                    if (Mathx.IsNumericPalindrome(product) && (product > largest))
+                    if (Mathz.IsNumericPalindrome(product) && (product > largest))
                         largest = product;
                 }
 
