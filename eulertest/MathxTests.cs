@@ -28,10 +28,15 @@ namespace eulertest
             Assert.IsTrue(Mathx.IsEvenlyDivisible(2520, 1, 10));   
         }
 
+        /// <summary>
+        /// Test for nth prime
+        /// </summary>
         [TestMethod]
         public void TestNthPrime()
         {
-            Assert.AreEqual(13, Mathz.NthPrime(6));
+            Assert.AreEqual(13, Mathx.NthPrime(6));
+
+            Assert.AreEqual(104743, Mathx.NthPrime(10001));
         }
 
         /// <summary>

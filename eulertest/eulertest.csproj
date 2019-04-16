@@ -56,7 +56,6 @@
     <Compile Include="IGridTest.cs" />
     <Compile Include="P02Tests.cs" />
     <Compile Include="MathxTests.cs" />
-    <Compile Include="UnitTest7.cs" />
     <Compile Include="UnitTest8.cs" />
     <Compile Include="UnitTest9.cs" />
   </ItemGroup>

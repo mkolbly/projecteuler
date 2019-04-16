@@ -43,32 +43,6 @@ namespace euler
 
 
 
-        /// <summary>
-        /// Get the nth prime number
-        /// </summary>
-        /// <example>
-        /// By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-        /// </example>
-        /// <param name="n">Sequence number of primes</param>
-        /// <returns>nth prime</returns>
-        public static long NthPrime(int n)
-        {
-            int numPrimes = 0;
-            long num = 2;
-
-            while (numPrimes < n)
-            {
-                if (Mathz.IsPrime(num))
-                    numPrimes++;
-
-                if (numPrimes == n)
-                    return num;
-
-                num++;
-            }
-
-            return -1;
-        }
 
 
 
