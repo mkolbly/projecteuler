@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C67F368-2AB2-48DD-A618-5255C9A40736}</ProjectGuid>
+    <ProjectGuid>{5D83B3F7-6D14-4D44-B264-67B01BD4A256}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>euler</RootNamespace>
-    <AssemblyName>euler</AssemblyName>
+    <RootNamespace>P06</RootNamespace>
+    <AssemblyName>P06</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGrid.cs" />
-    <Compile Include="MainProgram.cs" />
-    <Compile Include="Mathz.cs" />
-    <Compile Include="p11.cs" />
-    <Compile Include="p7.cs" />
-    <Compile Include="p8.cs" />
-    <Compile Include="p9.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EulerLib\EulerLib.csproj">
+      <Project>{58F93162-3335-47FC-A0ED-FBE1149E32F9}</Project>
+      <Name>EulerLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

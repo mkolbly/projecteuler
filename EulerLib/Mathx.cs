@@ -16,6 +16,51 @@ namespace EulerLib
     public static class Mathx
     {
         /// <summary>
+        /// Gets the square of the sum of the first n natural numbers
+        /// </summary>
+        /// <example>
+        /// The square of the sum of the first ten natural numbers is:
+        /// (1 + 2 + ... + 10)^2 = 55^2 = 3025
+        /// </example>
+        /// <param name="n">Number of natural numbers</param>
+        /// <returns>Square of the sum of the first n natural numbers</returns>
+        public static BigInteger SquareOfSums(BigInteger n)
+        {
+            BigInteger sum = 0;
+
+            for (BigInteger i = 1; i <= n; i++)
+            {
+                sum += i;
+            }
+
+            sum = sum * sum;
+
+            return sum;
+        }
+
+        /// <summary>
+        /// Gets the sum of the first n squares of natural numbers
+        /// </summary>
+        /// <example>
+        /// The sum of the first 10 squares of natural numbers = 1^2 + 2^2 + ... + 10^2 = 385
+        /// </example>
+        /// <param name="n">Number of natural numbers to get the sum of the squares for</param>
+        /// <returns>Sum of squares of first n natural numbers</returns>
+        public static BigInteger SumOfSquares(BigInteger n)
+        {
+            BigInteger sum = 0;
+
+            for (BigInteger i = 1; i <= n; i++)
+            {
+                sum += (i * i);
+            }
+
+            return sum;
+        }
+
+
+
+        /// <summary>
         /// Test for if num is evenly divisible by all integers from min to max
         /// </summary>
         /// <param name="num">Test number</param>

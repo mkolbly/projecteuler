@@ -34,17 +34,22 @@ namespace eulertest
             Assert.AreEqual(13, Mathz.NthPrime(6));
         }
 
+        /// <summary>
+        /// Test for sum of squares
+        /// </summary>
         [TestMethod]
         public void TestSumOfSquares()
         {
-            Assert.AreEqual(385, Mathz.SumOfSquares(10));
+            Assert.AreEqual(385, Mathx.SumOfSquares(10));
         }
 
-
+        /// <summary>
+        /// Test for square of sums
+        /// </summary>
         [TestMethod]
         public void TestSquareOfSums()
         {
-            Assert.AreEqual(3025, Mathz.SquareOfSums(10));
+            Assert.AreEqual(3025, Mathx.SquareOfSums(10));
         }
 
 
