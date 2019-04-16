@@ -34,11 +34,11 @@ namespace eulertest
 
             Assert.AreEqual(1000, bigNumber.Length);
 
-            long greatest = Mathx.GreatestProduct(bigNumber, 4);
+            long greatest = Mathz.GreatestProduct(bigNumber, 4);
 
             Assert.AreEqual(5832, greatest);
 
-            long greatest2 = Mathx.GreatestProduct(bigNumber, 13);
+            long greatest2 = Mathz.GreatestProduct(bigNumber, 13);
 
         }
     }

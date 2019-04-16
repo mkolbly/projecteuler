@@ -26,7 +26,7 @@ namespace euler
 
             for (long i = 3; i < sqrtNum; i+= 2)
             {
-                if ((testNum % i == 0) && Mathx.IsPrime(i))
+                if ((testNum % i == 0) && Mathz.IsPrime(i))
                     largest = i;
             }
 

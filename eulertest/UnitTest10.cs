@@ -13,7 +13,7 @@ namespace eulertest
             long sum = 0;
             for (long i = 0; i < 2000000; i++)
             {
-                if (Mathx.IsPrime(i))
+                if (Mathz.IsPrime(i))
                 {
                     sum += i;
                 }

@@ -24,7 +24,7 @@ namespace P02
         static void Main(string[] args)
         {
             BigInteger max = 4000000 - 1;
-            BigInteger sum = EMath.SumOfEvenFibonacci(max);
+            BigInteger sum = Mathx.SumOfEvenFibonacci(max);
 
             Console.WriteLine("The sum of even valued Fibonacci numbers <= {0} is {1}", max, sum);
         }

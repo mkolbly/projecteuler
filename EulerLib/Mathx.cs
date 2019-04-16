@@ -11,9 +11,9 @@ using System.Text;
 namespace EulerLib
 {
     /// <summary>
-    /// Euler math functions 
+    /// Miscellaneous mathematics functions 
     /// </summary>
-    public static class EMath
+    public static class Mathx
     {
         /// <summary>
         /// Finds the sum of even valued Fibonacci numbers <= max
@@ -91,9 +91,85 @@ namespace EulerLib
             return sum;
         }
 
+        /// <summary>
+        /// Cache for long prime numbers for IsPrime(long)
+        /// </summary>
+        private static HashSet<long> LongPrimes = new HashSet<long>();
 
+        /// <summary>
+        /// Test if a given number is a prime
+        /// </summary>
+        /// <remarks>
+        /// We only need to test odd numbers up to the square root of num.  Since we are
+        /// computationally intensive, we'll store primes in a cache - LongPrimes
+        /// </remarks>
+        /// <param name="num">Test number</param>
+        /// <returns>true if num is prime, else false</returns>
+        public static bool IsPrime(long num)
+        {
+            if (num <= 1)
+            {
+                return false;
+            }
+            else if (num == 2)
+            {
+                return true;
+            }
+            else if (num % 2 == 0)
+            {
+                return false;
+            }
+            else
+            {
+                if (Mathx.LongPrimes.Contains(num))
+                    return true;
 
+                long numSqrt = (int)Math.Floor(Math.Sqrt(num));
 
+                for (long i = 3; i <= numSqrt; i += 2)
+                    if (num % i == 0)
+                        return false;
+            }
 
+            Mathx.LongPrimes.Add(num);
+
+            return true;
+        }
+
+        /// <summary>
+        /// Finds the largest prime factor of num
+        /// </summary>
+        /// <param name="num">Number to find the largest prime factor for</param>
+        /// <returns>Largest prime factor of num or 0 if none found</returns>
+        public static long LargestPrimeFactor(long num)
+        {
+            if (num <= 1)
+            {
+                return 0;
+            }
+            else if (num == 2)
+            {
+                return 2;
+            }
+            else
+            {
+                long largest = 0;
+
+                long sqrtNum = (long)Math.Ceiling(Math.Sqrt((double)num));
+
+                // Check all odd numbers if they're a factor -and- they're a prime number
+                for (long i = 3; i <= sqrtNum; i += 2)
+                {
+                    if ((num % i == 0) && Mathx.IsPrime(i))
+                        largest = i;
+                }
+
+                // Check if num itself is a prime number (by definition, it's already a factor of itself)
+                if (Mathx.IsPrime(num))
+                    largest = num;
+
+                return largest;
+            }
+        }
     }
 }

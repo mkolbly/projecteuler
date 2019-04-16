@@ -29,7 +29,7 @@ namespace euler
         public static BigInteger GetAnswer()
         {
             
-            BigInteger sum = Mathx.SquareOfSums(100) - Mathx.SumOfSquares(100);
+            BigInteger sum = Mathz.SquareOfSums(100) - Mathz.SumOfSquares(100);
 
             return sum;
 
