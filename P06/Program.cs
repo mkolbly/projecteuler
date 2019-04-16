@@ -1,15 +1,16 @@
-﻿using System;
+﻿using EulerLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace euler
+namespace P06
 {
-
-
     /// <summary>
+    /// 
+    /// 
     /// The sum of the squares of the first ten natural numbers is,
     /// 1^2 + 2^2 + ... + 10^2 = 385
     ///
@@ -23,17 +24,15 @@ namespace euler
     ///
     /// Answer: 25164150
     /// </summary>
-    public static class p6
+    class Program
     {
-
-        public static BigInteger GetAnswer()
+        static void Main(string[] args)
         {
-            
-            BigInteger sum = Mathz.SquareOfSums(100) - Mathz.SumOfSquares(100);
 
-            return sum;
+            BigInteger sum = Mathx.SquareOfSums(100) - Mathx.SumOfSquares(100);
+
+            Console.WriteLine("Difference between the sum of the squares and the square of the sum of the first hundred natural numbers is {0}", sum);
 
         }
-
     }
 }
