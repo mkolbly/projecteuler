@@ -9,8 +9,24 @@ namespace eulertest
     [TestClass]
     public class MathxTests
     {
-        
+        /// <summary>
+        /// Test for divisbility
+        /// </summary>
+        [TestMethod]
+        public void TestDivibility()
+        {
+            Assert.IsFalse(Mathx.IsEvenlyDivisible(232792560 - 1, 1, 20));
 
+            Assert.IsTrue(Mathx.IsEvenlyDivisible(232792560, 1, 20));
+
+
+            for (int i = 1; i < 2520; i++)
+            {
+                Assert.IsFalse(Mathx.IsEvenlyDivisible(i, 1, 10));
+            }
+
+            Assert.IsTrue(Mathx.IsEvenlyDivisible(2520, 1, 10));   
+        }
 
         [TestMethod]
         public void TestNthPrime()
