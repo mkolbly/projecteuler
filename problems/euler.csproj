@@ -48,7 +48,6 @@
     <Compile Include="MainProgram.cs" />
     <Compile Include="Mathz.cs" />
     <Compile Include="p11.cs" />
-    <Compile Include="p4.cs" />
     <Compile Include="p5.cs" />
     <Compile Include="p6.cs" />
     <Compile Include="p7.cs" />

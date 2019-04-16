@@ -15,6 +15,23 @@ namespace EulerLib
     /// </summary>
     public static class Mathx
     {
+        /// <summary>
+        /// Test for if num is evenly divisible by all integers from min to max
+        /// </summary>
+        /// <param name="num">Test number</param>
+        /// <param name="min">Minimum integer to test for divisibility</param>
+        /// <param name="max">Maximum integer to test for divisibility</param>
+        /// <returns>true if num is evenly divisibil by all numbers from min to max</returns>
+        public static bool IsEvenlyDivisible(int num, int min, int max)
+        {
+            for (int j = min; j <= max; j++)
+            {
+                if (num % j != 0)
+                    return false;
+            }
+
+            return true;
+        }
 
 
         /// <summary>
@@ -37,21 +54,6 @@ namespace EulerLib
 
             return true;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         /// <summary>
