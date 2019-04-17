@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="P01Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest10.cs" />
     <Compile Include="IGridTest.cs" />
     <Compile Include="P02Tests.cs" />
     <Compile Include="MathxTests.cs" />
