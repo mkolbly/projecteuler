@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using euler;
 using EulerLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -145,9 +144,8 @@ namespace eulertest
             Assert.IsTrue(Mathx.IsPrime(7));
             Assert.IsTrue(Mathx.IsPrime(13));
             Assert.IsTrue(Mathx.IsPrime(29));
-
-    
         }
+
 
         /// <summary>
         /// Test for Mathx.LargestPrimeFactor(long)
@@ -185,7 +183,6 @@ namespace eulertest
             Assert.AreEqual(19, Mathx.LargestPrimeFactor(19));
             Assert.AreEqual(23, Mathx.LargestPrimeFactor(23));
             Assert.AreEqual(29, Mathx.LargestPrimeFactor(29));
-
         }
 
 

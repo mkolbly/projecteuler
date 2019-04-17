@@ -2,7 +2,7 @@
 using System.Numerics;
 using EulerLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using problems;
+
 
 namespace eulertest
 {
