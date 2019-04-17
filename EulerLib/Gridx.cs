@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace euler
+namespace EulerLib
 {
     /// <summary>
     /// Class representing an Array of Integers
@@ -22,18 +22,16 @@ namespace euler
     ///     i2 |
     /// 
     /// </remarks>
-    public class IGrid
+    public class Gridx
     {
         /// <summary>Our integer array</summary>
         private int[,] igrid;
-
-
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="grid">Array grid</param>
-        public IGrid(int[,] igrid)
+        public Gridx(int[,] igrid)
         {
             this.igrid = igrid;
         }
@@ -79,9 +77,7 @@ namespace euler
 
             long largest = largests.Max();
 
-            return largest;
-
-          
+            return largest;         
         }
 
 
@@ -117,7 +113,6 @@ namespace euler
 
             return largestProduct;
         }
-
 
 
         /// <summary>

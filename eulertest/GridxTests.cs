@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using euler;
+using EulerLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace eulertest
 {
     [TestClass]
-    public class IGridTest
+    public class GridxTests
     {
-
-        [TestMethod]
-        public void TestEulerP11()
-        {
-
-            p11.solve();
-        }
-
-
+        /// <summary>
+        /// Test for max product of consecutive numbers - any direction
+        /// </summary>
         [TestMethod]
         public void TestMaxProduct()
         {
@@ -56,7 +50,7 @@ namespace eulertest
 
             foreach (int[,] grid in testGrids)
             {
-                IGrid igrid = new IGrid(grid);
+                Gridx igrid = new Gridx(grid);
 
                 long largestProduct = igrid.LargestProduct(3);
 
@@ -65,7 +59,9 @@ namespace eulertest
 
         }
 
-
+        /// <summary>
+        /// Test greatest product of consecutive numbers - vertical
+        /// </summary>
         [TestMethod]
         public void TestVertical()
         {
@@ -106,7 +102,7 @@ namespace eulertest
 
             foreach (int[,] grid in testGrids)
             {
-                IGrid igrid = new IGrid(grid);
+                Gridx igrid = new Gridx(grid);
 
                 PrivateObject pgrid = new PrivateObject(igrid);
 
@@ -118,7 +114,9 @@ namespace eulertest
 
         }
 
-
+        /// <summary>
+        /// Test greatest diagonal product of consecutive numbers - horizontal numbers
+        /// </summary>
         [TestMethod]
         public void TestHorizontal()
         {
@@ -159,7 +157,7 @@ namespace eulertest
 
             foreach (int[,] grid in testGrids)
             {
-                IGrid igrid = new IGrid(grid);
+                Gridx igrid = new Gridx(grid);
 
                 PrivateObject pgrid = new PrivateObject(igrid);
 
@@ -171,7 +169,9 @@ namespace eulertest
 
         }
 
-
+        /// <summary>
+        /// Test greatest product of consecutive numbers - diagonal - upper right to lower left
+        /// </summary>
         [TestMethod]
         public void TestDiagUpperRightToLowerLeft()
         {
@@ -212,20 +212,20 @@ namespace eulertest
 
             foreach (int[,] grid in testGrids)
             {
-                IGrid igrid = new IGrid(grid);
+                Gridx igrid = new Gridx(grid);
 
                 PrivateObject pgrid = new PrivateObject(igrid);
 
                 long largestProduct = (long)pgrid.Invoke("LargestDiagonalProductUpperRightToLowerLeft", 3);
 
                 Assert.AreEqual(50, largestProduct);
-            }
-
-          
+            }    
         }
 
 
-
+        /// <summary>
+        /// Test greatest product of consecutive numbers - diagonal - upper left to lower right
+        /// </summary>
         [TestMethod]
         public void TestDiagUpperLeftToLowerRight()
         {
@@ -265,7 +265,7 @@ namespace eulertest
 
             foreach (int[,] grid in testGrids)
             {
-                IGrid igrid = new IGrid(grid);
+                Gridx igrid = new Gridx(grid);
 
                 PrivateObject pgrid = new PrivateObject(igrid);
 

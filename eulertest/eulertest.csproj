@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="P01Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IGridTest.cs" />
+    <Compile Include="GridxTests.cs" />
     <Compile Include="P02Tests.cs" />
     <Compile Include="MathxTests.cs" />
   </ItemGroup>
@@ -64,10 +64,6 @@
     <ProjectReference Include="..\p01\P01.csproj">
       <Project>{0d277679-cfc3-4966-9fdb-94d21a6e53c3}</Project>
       <Name>P01</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\problems\euler.csproj">
-      <Project>{5c67f368-2ab2-48dd-a618-5255c9a40736}</Project>
-      <Name>euler</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
