@@ -10,7 +10,6 @@ namespace EulerLib
     /// Class representing an Array of Integers
     /// </summary>
     /// <remarks>
-    /// 
     /// Note: The coordinate system has x going up->down and y going left->right
     ///       Here, we'll use i,j where i will traverse the up-down axis and j will
     ///       traverse the left-right axis instead of x,y
@@ -20,21 +19,12 @@ namespace EulerLib
     ///     i0 |
     ///     i1 |
     ///     i2 |
-    /// 
     /// </remarks>
-    public class Gridx
+    /// <param name="igrid">Integer array grid</param>
+    public class Gridx(int[,] igrid)
     {
         /// <summary>Our integer array</summary>
-        private int[,] igrid;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="grid">Array grid</param>
-        public Gridx(int[,] igrid)
-        {
-            this.igrid = igrid;
-        }
+        private readonly int[,] igrid = igrid;
 
         /// <summary>
         /// Grid height (i-axis)
@@ -64,7 +54,6 @@ namespace EulerLib
         /// </summary>
         public long LargestProduct(int lenAdjacentNumbers)
         {
-
             long largest1 = this.LargestDiagonalProductUpperRightToLowerLeft(lenAdjacentNumbers);
 
             long largest2 = this.LargestDiagonalProductUpperLeftToLowerRight(lenAdjacentNumbers);
@@ -73,13 +62,12 @@ namespace EulerLib
 
             long largest4 = this.LargestVerticalProduct(lenAdjacentNumbers);
 
-            List<long> largests = new List<long>() { largest1, largest2, largest3, largest4 };
+            List<long> largests = [largest1, largest2, largest3, largest4];
 
             long largest = largests.Max();
 
             return largest;         
         }
-
 
         /// <summary>
         /// For our 2x2 grid of integers, find the greatest product of adjacent numbers
@@ -87,7 +75,7 @@ namespace EulerLib
         /// </summary>
         /// <param name="lenAdjacentNumbers">How many adjacent integers to multiply</param>
         /// <returns>Greatest diagonal product</returns>
-        private long LargestDiagonalProductUpperRightToLowerLeft(int lenAdjacentNumbers)
+        public long LargestDiagonalProductUpperRightToLowerLeft(int lenAdjacentNumbers)
         {
             int width = this.Width;
             int height = this.Height;
@@ -106,7 +94,9 @@ namespace EulerLib
                             product *= igrid[i + l, j - l];
                         }
                         if (product > largestProduct)
+                        {
                             largestProduct = product;
+                        }
                     }
                 }
             }
@@ -114,14 +104,13 @@ namespace EulerLib
             return largestProduct;
         }
 
-
         /// <summary>
         /// For our 2x2 grid of integers, find the greatest product of adjacent numbers
         /// in the diagonal direction (upper-right to lower-left) aka (lower-left to upper-right)
         /// </summary>
         /// <param name="lenAdjacentNumbers">How many adjacent integers to multiply</param>
         /// <returns>Greatest diagonal product</returns>
-        private long LargestDiagonalProductUpperLeftToLowerRight(int lenAdjacentNumbers)
+        public long LargestDiagonalProductUpperLeftToLowerRight(int lenAdjacentNumbers)
         {
             int width = this.Width;
             int height = this.Height;
@@ -140,15 +129,15 @@ namespace EulerLib
                             product *= igrid[i + l, j + l];
                         }
                         if (product > largestProduct)
+                        {
                             largestProduct = product;
+                        }
                     }
                 }
-
             }
 
             return largestProduct;
         }
-
 
         /// <summary>
         /// For our 2x2 grid of integers, find the greatest product of adjacent numbers
@@ -176,15 +165,15 @@ namespace EulerLib
                         }
 
                         if (product > largestProduct)
+                        {
                             largestProduct = product;
+                        }
                     }
                 }
             }
 
             return largestProduct;
         }
-
-
 
         /// <summary>
         /// For our 2x2 grid of integers, find the greatest product of adjacent numbers
@@ -211,7 +200,9 @@ namespace EulerLib
                         }
 
                         if (product > largestProduct)
+                        {
                             largestProduct = product;
+                        }
                     }
                 }
             }
