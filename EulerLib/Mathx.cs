@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
+﻿using System.Numerics;
 
 /// <summary>
 /// Euler problems lib
@@ -18,15 +15,19 @@ namespace EulerLib
         /// <summary>
         /// Get the greatest product of the adjacent digits of num
         /// </summary>
-        /// <param name="num">Number in question</param>
+        /// <param name="num">Number in question (as a string)</param>
         /// <param name="numAdjacentDigits">How many adjacent digits to multiply</param>
         public static long GreatestProduct(string num, int numAdjacentDigits)
         {
             if (String.IsNullOrWhiteSpace(num))
+            {
                 return 0;
+            }
 
             if (numAdjacentDigits > num.Length)
+            {
                 return 0;
+            }
 
             long greatest = 0;
 
@@ -40,14 +41,13 @@ namespace EulerLib
                 }
 
                 if (product > greatest)
+                {
                     greatest = product;
+                }
             }
 
             return greatest;
         }
-
-
-
 
         /// <summary>
         /// Get the nth prime number
@@ -65,17 +65,20 @@ namespace EulerLib
             while ((numPrimes < n) && (num < long.MaxValue))
             {
                 if (Mathx.IsPrime(num))
+                {
                     numPrimes++;
+                }
 
                 if (numPrimes == n)
+                {
                     return num;
+                }
 
                 num++;
             }
 
             return -1;
         }
-
 
         /// <summary>
         /// Gets the square of the sum of the first n natural numbers
@@ -95,7 +98,7 @@ namespace EulerLib
                 sum += i;
             }
 
-            sum = sum * sum;
+            sum *= sum;
 
             return sum;
         }
@@ -120,8 +123,6 @@ namespace EulerLib
             return sum;
         }
 
-
-
         /// <summary>
         /// Test for if num is evenly divisible by all integers from min to max
         /// </summary>
@@ -134,12 +135,13 @@ namespace EulerLib
             for (int j = min; j <= max; j++)
             {
                 if (num % j != 0)
+                {
                     return false;
+                }
             }
 
             return true;
         }
-
 
         /// <summary>
         /// Is the given number a palindrome
@@ -149,29 +151,35 @@ namespace EulerLib
         public static bool IsNumericPalindrome(int num)
         {
             if (num < 0)
+            {
                 return false;
+            }
 
             string stNum = num.ToString();
 
             for (int i = 0, j = stNum.Length - 1; i < j; i++, j--)
             {
                 if (stNum[i] != stNum[j])
+                {
                     return false;
+                }
             }
 
             return true;
         }
-
 
         /// <summary>
         /// Finds the sum of even valued Fibonacci numbers <= max
         /// </summary>
         /// <param name="max">Max Fibonacci number to be added</param>
         /// <returns>Sum of even valued Fibonacci numbers <= max</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "Cleaner code")]
         public static BigInteger SumOfEvenFibonacci(BigInteger max)
         {
             if (max < 0)
-                throw new ArgumentException("max must be > 0", "max");
+            {
+                throw new ArgumentException($"{nameof(max)} must be > 0", nameof(max));
+            }
 
             BigInteger a = 0;         // Fibonacci number 1       
             BigInteger b = 1;         // Fibonacci number 2
@@ -182,7 +190,9 @@ namespace EulerLib
             while (a <= max)
             {
                 if (a % 2 == 0)
+                {
                     sum += a;
+                }
 
                 tmp = a + b;
                 a = b;
@@ -191,7 +201,6 @@ namespace EulerLib
 
             return sum;
         }
-
 
         /// <summary>
         /// Finds the sum of multiples of natural numbers less <= max  
@@ -208,18 +217,26 @@ namespace EulerLib
         public static long SumOfMultiples(long max, params long[] multiples)
         {
             if (max < 0)
-                throw new ArgumentException("max must be a positive number", "max");
+            {
+                throw new ArgumentException($"{nameof(max)} must be a positive number", nameof(max));
+            }
 
             if (multiples == null)
-                throw new ArgumentException("multiples cannot be null", "multiples");
+            {
+                throw new ArgumentNullException(nameof(multiples), $"{nameof(multiples)} cannot be null");
+            }
 
             if (multiples.LongLength < 1)
-                throw new ArgumentException("multiples must contain at least one value", "multiples");
+            {
+                throw new ArgumentException($"{nameof(multiples)} must contain at least one value", nameof(multiples));
+            }
 
             foreach (long m in multiples)
             {
                 if (m > max)
-                    throw new ArgumentException("multiples cannot contain a number > max", "multiples");
+                {
+                    throw new ArgumentException($"{nameof(multiples)} cannot contain a number > {nameof(max)}", nameof(multiples));
+                }
             }
 
             long sum = 0;
@@ -242,7 +259,7 @@ namespace EulerLib
         /// <summary>
         /// Cache for long prime numbers for IsPrime(long)
         /// </summary>
-        private static HashSet<long> LongPrimes = new HashSet<long>();
+        private static readonly HashSet<long> LongPrimes = [];
 
         /// <summary>
         /// Test if a given number is a prime
@@ -270,21 +287,25 @@ namespace EulerLib
             else
             {
                 if (Mathx.LongPrimes.Contains(num))
+                {
                     return true;
+                }
 
                 long numSqrt = (int)Math.Floor(Math.Sqrt(num));
 
                 for (long i = 3; i <= numSqrt; i += 2)
+                {
                     if (num % i == 0)
+                    {
                         return false;
+                    }
+                }
             }
 
             Mathx.LongPrimes.Add(num);
 
             return true;
         }
-
-      
 
         /// <summary>
         /// Finds the largest prime factor of num
@@ -311,12 +332,16 @@ namespace EulerLib
                 for (long i = 3; i <= sqrtNum; i += 2)
                 {
                     if ((num % i == 0) && Mathx.IsPrime(i))
+                    {
                         largest = i;
+                    }
                 }
 
                 // Check if num itself is a prime number (by definition, it's already a factor of itself)
                 if (Mathx.IsPrime(num))
+                {
                     largest = num;
+                }
 
                 return largest;
             }
