@@ -13,3 +13,5 @@ delve into unfamiliar areas and learn new concepts in a fun and recreational con
 
 The problems are solved using unit tests in project EulerMSTest.  Most of the problem solving logic is int he library EulerLib.
 
+Both projects have been updated to .NET 8.0
+
