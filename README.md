@@ -11,7 +11,7 @@ of a computer and programming skills will be required to solve most problems.
 The motivation for starting Project Euler, and its continuation, is to provide a platform for the inquiring mind to 
 delve into unfamiliar areas and learn new concepts in a fun and recreational context.
 
-The problems are solved using unit tests in project EulerMSTest.  Most of the problem solving logic is int he library EulerLib.
+The problems are solved using unit tests in project EulerMSTest.  Most of the problem solving logic is in the library EulerLib.
 
 Both projects have been updated to .NET 8.0
 
